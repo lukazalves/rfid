@@ -81,6 +81,12 @@ void loop()
   }
 }
 
+//este método deve enviar o conteúdo (ou só o UID) lido do cartão via bluetooth/arduino (RX/TX)
+void enviaCartao(String conteudo.substring(1)) {
+  mySerial.print(conteudo);
+  delay(3000);
+}
+
 void mensageminicial()
 {
   lcd.clear();
