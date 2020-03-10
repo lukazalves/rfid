@@ -1,5 +1,5 @@
 //Programa : RFID - Controle de Acesso leitor RFID
-//Autor : FILIPEFLOP
+//Autor : Lucas Alves
 
 #include <SPI.h>
 #include <MFRC522.h>
@@ -9,7 +9,7 @@
 #define SS_PIN 10
 #define RST_PIN 9
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
-SoftwareSerial mySerial(SS_PIN, RST_PIN); //RX, TX 
+SoftwareSerial mySerial(0,1); //RX, TX 
 
 LiquidCrystal lcd(6, 7, 5, 4, 3, 2);
 
@@ -54,35 +54,43 @@ void loop()
   Serial.println();
   Serial.print("Mensagem : ");
   conteudo.toUpperCase();
-  if (conteudo.substring(1) == "ED 78 03 CA") //UID 1 - Chaveiro
+  
+  
+  if (conteudo.substring(1) == "60 1D A9 AB") //UID 1 - Cartao
   {
-    Serial.println("Ola FILIPEFLOP !");
-    Serial.println();
+    Serial.println("Ola Lucas!");
+    Serial.println("Por Favor, Aguarde!");
+    //enviaCartao(conteudo.substring(1)); - //envia o código lido
+    //mySerial.print("L");
+    delay(3000);
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Ola FILIPEFLOP !");
+    lcd.print("Bem-Vindo, Lucas!!");
     lcd.setCursor(0, 1);
     lcd.print("Acesso liberado!");
     delay(3000);
     mensageminicial();
   }
 
-  if (conteudo.substring(1) == "BD 9B 06 7D") //UID 2 - Cartao
+  if (conteudo.substring(1) == "60 1F 0D C5") //UID 2 - Cartao
   {
-    Serial.println("Ola Cartao !");
-    Serial.println();
+    Serial.println("Ola Cartao!");
+    Serial.println("Por Favor, Aguarde!");
+    //enviaCartao(conteudo.substring(1));
+    //mySerial.print("D");
+    delay(3000);
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Ola Cartao !");
+    lcd.print("Bem-Vindo, Cartao!");
     lcd.setCursor(0, 1);
-    lcd.print("Acesso Negado !");
+    lcd.print("Acesso Negado!");
     delay(3000);
     mensageminicial();
   }
 }
 
 //este método deve enviar o conteúdo (ou só o UID) lido do cartão via bluetooth/arduino (RX/TX)
-void enviaCartao(String conteudo.substring(1)) {
+void enviaCartao(String conteudo) {
   mySerial.print(conteudo);
   delay(3000);
 }

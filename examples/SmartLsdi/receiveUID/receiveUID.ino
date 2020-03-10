@@ -17,12 +17,12 @@ void loop()
   {
     buf = Serial.read();
     //Caso seja recebido o caracter L, acende o led
-    if (buf == "UID")
+    if (buf == "L")
     {
       digitalWrite(13, HIGH);
     }
     //Caso seja recebido o caracter D, apaga o led
-     if (buf == "UID")
+     if (buf == "D")
     {
       digitalWrite(13, LOW);
     }
