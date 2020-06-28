@@ -64,7 +64,7 @@ void loop()
     mensageminicial();
   }
  
-  if (conteudo.substring(1) == "BD 9B 06 7D") //UID 2 - Cartao
+  if (conteudo.substring(1) == "60 1D A9 AB") //UID 2 - Cartao
   {
     Serial.println("Ola Cartao !");
     Serial.println();

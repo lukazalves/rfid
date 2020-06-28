@@ -1,10 +1,6 @@
 // Programa: Sensor DHT11 - Envio de dados via Bluetooth
 // Autor: FILIPEFLOP
  
- 
- 
- 
- 
 void setup()
 {
   Serial.begin(9600);

@@ -15,7 +15,9 @@ void loop()
 {
   while(Serial.available() > 0)
   {
+    
     buf = Serial.read();
+    Serial.println(buf);
     //Caso seja recebido o caracter L, acende o led
     if (buf == "L")
     {

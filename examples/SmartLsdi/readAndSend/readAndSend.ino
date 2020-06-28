@@ -56,12 +56,12 @@ void loop()
   conteudo.toUpperCase();
   
   
-  if (conteudo.substring(1) == "60 1D A9 AB") //UID 1 - Cartao
+  if (conteudo.substring(1) == "3A 9C A8 B5") //UID 1 - Cartao
   {
     Serial.println("Ola Lucas!");
     Serial.println("Por Favor, Aguarde!");
     //enviaCartao(conteudo.substring(1)); - //envia o código lido
-    //mySerial.print("L");
+    mySerial.print("L");
     delay(3000);
     lcd.clear();
     lcd.setCursor(0, 0);
@@ -72,12 +72,12 @@ void loop()
     mensageminicial();
   }
 
-  if (conteudo.substring(1) == "60 1F 0D C5") //UID 2 - Cartao
+  if (conteudo.substring(1) == "3A 9C A8 B5") //UID 2 - Cartao
   {
     Serial.println("Ola Cartao!");
     Serial.println("Por Favor, Aguarde!");
     //enviaCartao(conteudo.substring(1));
-    //mySerial.print("D");
+    mySerial.print("D");
     delay(3000);
     lcd.clear();
     lcd.setCursor(0, 0);

@@ -1,0 +1,5 @@
+arquivo sendMessage funcionou nos testes
+
+o arduino envia o texto para o bluetooth que transmite ao celular. a mensagem chega integra com uma boa acuracia
+
+arquivo receiveMessage não funcionou. equipamento recebe as mensagens, mas não é a que se espera. verificar porque.
