@@ -6,7 +6,7 @@
 #include <SPI.h>
       
 //Define os pinos para a serial
-SoftwareSerial mySerial(2, 3); // RX, TX  
+SoftwareSerial mySerial(0, 1); // RX, TX  
 String command = ""; // Stores response of bluetooth device  
             // which simply allows n between each  
             // response.  

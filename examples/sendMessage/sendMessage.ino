@@ -5,7 +5,7 @@
 #include <SoftwareSerial.h>
 
 //Define os pinos para a serial
-SoftwareSerial mySerial(10, 11); // RX, TX
+SoftwareSerial mySerial(5, 6); // RX, TX
 String buf;
 
 void setup(){
@@ -15,17 +15,15 @@ void setup(){
 }
 
 void loop(){
-  
-  //Envia pela serial o caracter L
-  buf = "teste";
+ 
+  buf = "60 1D A9 AB";
   mySerial.print(buf);
-  Serial.println(buf);
+  //Serial.println(buf);
   delay(3000);
   
-  //Envia pela serial o caracter D
-  buf = "ok";
+  buf = " F5 6A 08 88";
   mySerial.print(buf);
-  Serial.println(buf);
+  //Serial.println(buf);
   delay(3000);
 
 }

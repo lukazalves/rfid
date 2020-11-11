@@ -6,7 +6,7 @@ String buf;
 
 void setup(){
   
-  SoftwareSerial mySerial(10, 11); // RX, TX
+  SoftwareSerial mySerial(0, 1); // RX, TX
   Serial.begin(9600);
 
 }
